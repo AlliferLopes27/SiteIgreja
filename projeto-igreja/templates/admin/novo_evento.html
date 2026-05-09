@@ -1,0 +1,83 @@
+{% extends 'admin/dashboard.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1>Novo Evento</h1>
+
+    <form method="POST">
+
+        <!-- Título -->
+
+        <div class="mb-3">
+
+            <label>Título</label>
+
+            <input
+                type="text"
+                class="form-control"
+                name="titulo"
+                required
+            >
+
+        </div>
+
+        <!-- Descrição -->
+
+        <div class="mb-3">
+
+            <label>Descrição</label>
+
+            <textarea
+                class="form-control"
+                name="descricao"
+                rows="5"
+                required>
+            </textarea>
+
+        </div>
+
+        <!-- Data -->
+
+        <div class="mb-3">
+
+            <label>Data</label>
+
+            <input
+                type="date"
+                class="form-control"
+                name="data"
+                required
+            >
+
+        </div>
+
+        <!-- Hora -->
+
+        <div class="mb-3">
+
+            <label>Hora</label>
+
+            <input
+                type="time"
+                class="form-control"
+                name="hora"
+                required
+            >
+
+        </div>
+
+        <!-- Botão -->
+
+        <div class="mb-5">
+            <button class="btn btn-primary">
+                Salvar Evento
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

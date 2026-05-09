@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1>Pedido de Oração</h1>
+
+    <form method="POST">
+
+        <div class="mb-3">
+
+            <label>Nome</label>
+
+            <input
+                type="text"
+                class="form-control"
+                name="nome"
+                required
+            >
+
+        </div>
+
+        <div class="mb-3">
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                class="form-control"
+                name="email"
+                required
+            >
+
+        </div>
+
+        <div class="mb-3">
+
+            <label>Pedido</label>
+
+            <textarea
+                class="form-control"
+                name="pedido"
+                rows="5"
+                required
+            >
+            </textarea>
+
+        </div>
+
+        <button class="btn btn-dark">
+            Enviar
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

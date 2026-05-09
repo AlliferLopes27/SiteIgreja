@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Carousel -->
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='img/Carrosel01.jpg') }}" class="d-block w-100">
+        </div>
+
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='img/Carrosel02.jpg') }}" class="d-block w-100">
+        </div>
+
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='img/Carrosel03.jpg') }}" class="d-block w-100">
+        </div>
+
+        <!-- Botões -->
+         
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+<!-- Missão -->
+
+<section class="container mt-5">
+
+    <h2>Missão</h2>
+
+    <p>
+        Levar esperança através da fé.
+    </p>
+
+</section>
+
+<!-- Eventos -->
+
+<section class="container mt-5">
+
+    <h2>Próximos Eventos</h2>
+
+    <div class="row">
+
+        {% for evento in eventos %}
+
+        <div class="col-md-4">
+
+            <div class="card mb-4">
+
+                <div class="card-body">
+
+                    <h5>{{ evento.titulo }}</h5>
+
+                    <p>{{ evento.descricao }}</p>
+
+                    <p>{{ evento.data }} / {{ evento.hora }}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

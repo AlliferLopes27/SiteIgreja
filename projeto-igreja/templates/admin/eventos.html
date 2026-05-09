@@ -1,0 +1,82 @@
+{% extends 'admin/dashboard.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between mb-4">
+
+        <h1>Gerenciar Eventos</h1>
+
+        <div class="">
+            <a 
+            href="/admin/eventos/novo"
+            class="btn btn-primary"
+            >
+                Novo Evento
+            </a>
+        </div>
+
+    </div>
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+
+            <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Ações</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for evento in eventos %}
+
+            <tr>
+
+                <td>{{ evento.titulo }}</td>
+
+                <td>{{ evento.descricao }}</td>
+
+                <td>{{ evento.data }}</td>
+
+                <td>{{ evento.hora }}</td>
+
+                <td>
+
+                    <!-- Botão Editar -->
+
+                    <a
+                        href="/admin/eventos/editar/{{ evento.id }}"
+                        class="btn btn-warning btn-sm"
+                    >
+                        Editar
+                    </a>
+
+                    <!-- Botão Excluir -->
+
+                    <a
+                        href="/admin/eventos/excluir/{{ evento.id }}"
+                        class="btn btn-danger btn-sm"
+                    >
+                        Excluir
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

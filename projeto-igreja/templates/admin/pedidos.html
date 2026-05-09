@@ -1,0 +1,43 @@
+{% extends 'admin/dashboard.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1>Pedidos de Oração</h1>
+
+    <table class="table table-bordered table-striped mt-4">
+
+        <thead>
+
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Pedido</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for pedido in pedidos %}
+
+            <tr>
+
+                <td>{{ pedido.nome }}</td>
+
+                <td>{{ pedido.email }}</td>
+
+                <td>{{ pedido.pedido }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

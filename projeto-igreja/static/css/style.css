@@ -1,0 +1,123 @@
+/* Estrutura da página */
+
+html {
+    height: 100%;
+}
+/* Body */
+
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Conteúdo principal */
+
+main {
+    flex: 1;
+}
+
+/* Navbar */
+
+.navbar {
+    padding: 8px 15px;
+}
+
+/* Logo */
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navbar personalizada */
+
+.navbar-custom {
+    background-color: #111;
+}
+
+/* Logo navbar */
+
+.logo-navbar {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* Carousel */
+
+.carousel img {
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Cards */
+
+.card {
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+/* Hover nos cards */
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Botões */
+
+.btn {
+    border-radius: 8px;
+}
+
+/* Títulos */
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+/* Rodapé */
+
+.footer {
+    background-color: #111;
+    color: white;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+/* Redes sociais (imagens) */
+
+.social-icons img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    transition: 0.3s;
+    object-fit: contain;
+}
+
+/* Hover */
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Links Redes Sociais */
+
+.footer a {
+    text-decoration: none;
+}
+
+/* Hover links */
+
+.footer a:hover {
+    color: white;
+}
+
+/* Linha */
+
+.footer hr {
+    border-color: #444;
+}
