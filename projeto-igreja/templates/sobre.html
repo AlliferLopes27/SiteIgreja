@@ -2,54 +2,191 @@
 
 {% block content %}
 
-<div class="container mt-5">
+<section class="container py-5">
 
-    <h1>Sobre Nós</h1>
+    <!-- Título -->
 
-    <div class="row mt-4">
+    <div class="row mb-5 text-center">
 
-        <div class="col-md-6">
+        <div class="col-12">
 
-            <img
-                src="{{ url_for('static', filename='img/Imagem.png') }}"
-                class="img-fluid rounded shadow"
-            >
+            <h1 class="fw-bold">
 
-        </div>
+                Sobre Nós
 
-        <div class="col-md-6">
+            </h1>
 
-            <h3>História da Igreja</h3>
+            <p class="lead">
 
-            <p>
-                A Igreja Comunidade Luz e Esperança foi criada
-                para levar fé e esperança para toda a comunidade.
+                Conheça a história, visão e valores
+                da Igreja Luz e Esperança.
+
             </p>
-
-            <h3>Missão</h3>
-
-            <p>
-                Levar a palavra de Deus.
-            </p>
-
-            <h3>Visão</h3>
-
-            <p>
-                Transformar vidas.
-            </p>
-
-            <h3>Valores</h3>
-
-            <ul>
-                <li>Amor</li>
-                <li>Respeito</li>
-                <li>União</li>
-            </ul>
 
         </div>
 
     </div>
 
-</div>
+    <!-- História -->
+
+    <div class="row align-items-center g-5 mb-5">
+
+        <!-- Imagem -->
+
+        <div class="col-12 col-lg-6 text-center">
+
+            <img
+                src="{{ url_for('static', filename='img/Imagem01.png') }}"
+                class="img-fluid rounded shadow"
+                alt="Igreja"
+            >
+
+        </div>
+
+        <!-- Texto -->
+
+        <div class="col-12 col-lg-6">
+
+            <h2 class="fw-bold mb-4">
+
+                História da Igreja
+
+            </h2>
+
+            <p>
+                A Igreja Luz e Esperança nasceu com o propósito de compartilhar o amor de Deus e transformar vidas através da fé cristã. Desde o início de sua trajetória, a igreja tem trabalhado para acolher pessoas, fortalecer famílias e levar esperança à comunidade por meio da Palavra de Deus, do discipulado e das ações sociais.
+            </p>
+
+            <p>
+                Ao longo dos anos, a igreja cresceu e passou a desenvolver diversos projetos espirituais e comunitários voltados ao apoio de crianças, jovens, adultos e idosos, sempre buscando promover união, solidariedade e crescimento espiritual.
+            </p>
+
+            <p>
+                Nossa história é marcada pela dedicação, perseverança e compromisso em servir à comunidade com amor, humildade e responsabilidade.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Visão -->
+
+    <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+
+        <!-- Imagem -->
+
+        <div class="col-12 col-lg-6 text-center">
+
+            <img
+                src="{{ url_for('static', filename='img/Imagem02.png') }}"
+                class="img-fluid rounded shadow"
+                alt="Comunidade"
+            >
+
+        </div>
+
+        <!-- Texto -->
+
+        <div class="col-12 col-lg-6">
+
+            <h2 class="fw-bold mb-4">
+
+                Visão
+
+            </h2>
+
+            <p>
+                Nossa visão é ser uma igreja reconhecida pelo compromisso com a Palavra de Deus, pelo amor ao próximo e pela dedicação em transformar vidas através da fé cristã.
+            </p>
+
+            <p>
+                Desejamos alcançar pessoas de diferentes realidades, levando esperança e mostrando que, através de Deus, é possível encontrar restauração, paz e direção para a vida.
+            </p>
+
+            <p>
+                Também buscamos ampliar projetos sociais, ações comunitárias e iniciativas que contribuam para o bem-estar espiritual e social da população.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Valores -->
+
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-lg-10">
+
+            <div class="card shadow border-0">
+
+                <div class="card-body p-4 p-md-5">
+
+                    <h2 class="fw-bold text-center mb-5">
+
+                        Valores
+
+                    </h2>
+
+                    <div class="row g-4">
+
+                        <div class="col-12 col-md-6">
+
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item">
+                                    Amor ao próximo
+                                </li>
+
+                                <li class="list-group-item">
+                                    Fé e confiança em Deus
+                                </li>
+
+                                <li class="list-group-item">
+                                    Respeito e união entre as pessoas
+                                </li>
+
+                                <li class="list-group-item">
+                                    Humildade e solidariedade
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="col-12 col-md-6">
+
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item">
+                                    Compromisso com a Palavra de Deus
+                                </li>
+
+                                <li class="list-group-item">
+                                    Responsabilidade social
+                                </li>
+
+                                <li class="list-group-item">
+                                    Acolhimento às famílias
+                                </li>
+
+                                <li class="list-group-item">
+                                    Honestidade e integridade
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}

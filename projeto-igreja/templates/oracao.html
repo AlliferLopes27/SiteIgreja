@@ -2,58 +2,127 @@
 
 {% block content %}
 
-<div class="container mt-5">
+<section class="container py-5">
 
-    <h1>Pedido de Oração</h1>
+    <div class="row justify-content-center">
 
-    <form method="POST">
+        <div class="col-12 col-md-10 col-lg-8">
 
-        <div class="mb-3">
+            <!-- Card -->
 
-            <label>Nome</label>
+            <div class="card shadow border-0">
 
-            <input
-                type="text"
-                class="form-control"
-                name="nome"
-                required
-            >
+                <div class="card-body p-4 p-md-5">
+
+                    <!-- Título -->
+
+                    <div class="text-center mb-5">
+
+                        <h1 class="fw-bold">
+
+                            Pedido de Oração
+
+                        </h1>
+
+                        <p class="lead">
+
+                            Envie seu pedido de oração.
+                            Estaremos orando por você e sua família.
+
+                        </p>
+
+                    </div>
+
+                    <!-- Formulário -->
+
+                    <form method="POST">
+
+                        <!-- Nome -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-semibold">
+
+                                Nome
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control form-control-lg"
+                                name="nome"
+                                placeholder="Digite seu nome"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- Email -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-semibold">
+
+                                Email
+
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control form-control-lg"
+                                name="email"
+                                placeholder="Digite seu email"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- Pedido -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-semibold">
+
+                                Pedido
+
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                name="pedido"
+                                rows="6"
+                                placeholder="Escreva seu pedido de oração"
+                                required
+                            ></textarea>
+
+                        </div>
+
+                        <!-- Botão -->
+
+                        <div class="d-grid">
+
+                            <button
+                                class="btn btn-dark btn-lg"
+                            >
+
+                                <i class="bi bi-send-fill"></i>
+
+                                Enviar Pedido
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="mb-3">
+    </div>
 
-            <label>Email</label>
-
-            <input
-                type="email"
-                class="form-control"
-                name="email"
-                required
-            >
-
-        </div>
-
-        <div class="mb-3">
-
-            <label>Pedido</label>
-
-            <textarea
-                class="form-control"
-                name="pedido"
-                rows="5"
-                required
-            >
-            </textarea>
-
-        </div>
-
-        <button class="btn btn-dark">
-            Enviar
-        </button>
-
-    </form>
-
-</div>
+</section>
 
 {% endblock %}
