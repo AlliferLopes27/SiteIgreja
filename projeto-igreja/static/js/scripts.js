@@ -1,5 +1,3 @@
-
-
 // FUNÇÃO DO TOAST (BOOTSTRAP)
 
 function mostrarToast(mensagem, tipo = "success") {
@@ -36,11 +34,42 @@ window.onload = function () {
     }
 
     if (urlParams.get('evento') === 'excluido') {
-        mostrarToast("Evento excluído com sucesso!", "danger");
+        mostrarToast("Evento excluído com sucesso!", "success");
     }
 
-    // ✔ PEDIDOS (caso queira usar depois)
+    // PEDIDOS
     if (urlParams.get('enviado') === '1') {
-        mostrarToast("Pedido de oração enviado com sucesso!", "success");
+        mostrarToast("Pedido de oração enviado com sucesso!", "sucess");
     }
 };
+
+    // Seleciona botão
+
+    const btnTopo = document.getElementById("btn-topo");
+
+    // Mostrar botão ao rolar
+
+    window.onscroll = function () {
+
+        if (document.body.scrollTop > 200 ||
+            document.documentElement.scrollTop > 200) {
+
+            btnTopo.style.display = "block";
+
+        } else {
+
+            btnTopo.style.display = "none";
+        }
+    };
+
+    // Voltar ao topo
+
+    btnTopo.addEventListener("click", function () {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+        });
+    });
