@@ -2,81 +2,152 @@
 
 {% block content %}
 
-<div class="container mt-5">
+<div class="container py-5">
 
-    <h1>Novo Evento</h1>
+    <!-- Título -->
 
-    <form method="POST">
+    <div class="mb-4">
 
-        <!-- Título -->
+        <h1 class="text-center text-md-start">
 
-        <div class="mb-3">
+            Novo Evento
 
-            <label>Título</label>
+        </h1>
 
-            <input
-                type="text"
-                class="form-control"
-                name="titulo"
-                required
-            >
+        <p class="text-muted text-center text-md-start">
+
+            Cadastre um novo evento da igreja.
+
+        </p>
+
+    </div>
+
+    <!-- Card -->
+
+    <div class="card shadow border-0">
+
+        <div class="card-body p-4">
+
+            <form method="POST">
+
+                <!-- Título -->
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-bold">
+
+                        Título
+
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="titulo"
+                        placeholder="Digite o título do evento"
+                        required
+                    >
+
+                </div>
+
+                <!-- Descrição -->
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-bold">
+
+                        Descrição
+
+                    </label>
+
+                    <textarea
+                        class="form-control"
+                        name="descricao"
+                        rows="5"
+                        placeholder="Digite a descrição do evento"
+                        required
+                    ></textarea>
+
+                </div>
+
+                <!-- Linha -->
+
+                <div class="row">
+
+                    <!-- Data -->
+
+                    <div class="col-12 col-md-6 mb-4">
+
+                        <label class="form-label fw-bold">
+
+                            Data
+
+                        </label>
+
+                        <input
+                            type="date"
+                            class="form-control"
+                            name="data"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Hora -->
+
+                    <div class="col-12 col-md-6 mb-4">
+
+                        <label class="form-label fw-bold">
+
+                            Hora
+
+                        </label>
+
+                        <input
+                            type="time"
+                            class="form-control"
+                            name="hora"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- Botões -->
+
+                <div class="d-flex flex-column flex-md-row gap-3">
+
+                    <!-- Salvar -->
+
+                    <button class="btn btn-primary">
+
+                        <i class="bi bi-save2"></i>
+
+                        Salvar Evento
+
+                    </button>
+
+                    <!-- Voltar -->
+
+                    <a
+                        href="{{ url_for('admin.eventos') }}"
+                        class="btn btn-secondary"
+                    >
+
+                        <i class="bi bi-arrow-return-left"></i>
+
+                        Voltar
+
+                    </a>
+
+                </div>
+
+            </form>
 
         </div>
 
-        <!-- Descrição -->
-
-        <div class="mb-3">
-
-            <label>Descrição</label>
-
-            <textarea
-                class="form-control"
-                name="descricao"
-                rows="5"
-                required>
-            </textarea>
-
-        </div>
-
-        <!-- Data -->
-
-        <div class="mb-3">
-
-            <label>Data</label>
-
-            <input
-                type="date"
-                class="form-control"
-                name="data"
-                required
-            >
-
-        </div>
-
-        <!-- Hora -->
-
-        <div class="mb-3">
-
-            <label>Hora</label>
-
-            <input
-                type="time"
-                class="form-control"
-                name="hora"
-                required
-            >
-
-        </div>
-
-        <!-- Botão -->
-
-        <div class="mb-5">
-            <button class="btn btn-primary">
-                Salvar Evento
-            </button>
-        </div>
-
-    </form>
+    </div>
 
 </div>
 

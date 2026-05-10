@@ -2,41 +2,111 @@
 
 {% block content %}
 
-<div class="container mt-5">
+<div class="container py-5">
 
-    <h1>Pedidos de Oração</h1>
+    <!-- Título -->
 
-    <table class="table table-bordered table-striped mt-4">
+    <div class="mb-4">
 
-        <thead>
+        <h1 class="text-center text-md-start">
 
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Pedido</th>
-            </tr>
+            Pedidos de Oração
 
-        </thead>
+        </h1>
 
-        <tbody>
+        <p class="text-muted text-center text-md-start">
 
-            {% for pedido in pedidos %}
+            Visualize os pedidos enviados pelo site.
 
-            <tr>
+        </p>
 
-                <td>{{ pedido.nome }}</td>
+    </div>
 
-                <td>{{ pedido.email }}</td>
+    <!-- Card -->
 
-                <td>{{ pedido.pedido }}</td>
+    <div class="card shadow border-0">
 
-            </tr>
+        <div class="card-body">
 
-            {% endfor %}
+            <!-- Responsividade -->
 
-        </tbody>
+            <div class="table-responsive">
 
-    </table>
+                <table class="table table-bordered table-hover align-middle">
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th width="220">
+
+                                Nome
+
+                            </th>
+
+                            <th width="280">
+
+                                Email
+
+                            </th>
+
+                            <th>
+
+                                Pedido
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for pedido in pedidos %}
+
+                        <tr>
+
+                            <!-- Nome -->
+
+                            <td class="fw-bold">
+
+                                <i class="bi bi-person-circle"></i>
+
+                                {{ pedido.nome }}
+
+                            </td>
+
+                            <!-- Email -->
+
+                            <td>
+
+                                <i class="bi bi-envelope"></i>
+
+                                {{ pedido.email }}
+
+                            </td>
+
+                            <!-- Pedido -->
+
+                            <td>
+
+                                {{ pedido.pedido }}
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 

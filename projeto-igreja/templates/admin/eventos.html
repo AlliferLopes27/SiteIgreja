@@ -2,80 +2,172 @@
 
 {% block content %}
 
-<div class="container mt-5">
+<div class="container py-5">
 
-    <div class="d-flex justify-content-between mb-4">
+    <!-- Topo -->
 
-        <h1>Gerenciar Eventos</h1>
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
 
-        <div class="">
-            <a 
-            href="/admin/eventos/novo"
-            class="btn btn-primary"
+        <!-- Título -->
+
+        <div>
+
+            <h1 class="text-center text-md-start">
+
+                Gerenciar Eventos
+
+            </h1>
+
+            <p class="text-muted text-center text-md-start mb-0">
+
+                Visualize, edite e exclua os eventos cadastrados.
+
+            </p>
+
+        </div>
+
+        <!-- Botão Novo -->
+
+        <div class="text-center">
+
+            <a
+                href="/admin/eventos/novo"
+                class="btn btn-success"
             >
+
+                <i class="bi bi-plus-square"></i>
+
                 Novo Evento
+
             </a>
+
         </div>
 
     </div>
 
-    <table class="table table-bordered table-striped">
+    <!-- Card -->
 
-        <thead>
+    <div class="card shadow border-0">
 
-            <tr>
-                <th>Título</th>
-                <th>Descrição</th>
-                <th>Data</th>
-                <th>Hora</th>
-                <th>Ações</th>
-            </tr>
+        <div class="card-body">
 
-        </thead>
+            <!-- Responsividade -->
 
-        <tbody>
+            <div class="table-responsive">
 
-            {% for evento in eventos %}
+                <table class="table table-bordered table-hover align-middle">
 
-            <tr>
+                    <thead class="table-dark">
 
-                <td>{{ evento.titulo }}</td>
+                        <tr>
 
-                <td>{{ evento.descricao }}</td>
+                            <th>Título</th>
 
-                <td>{{ evento.data }}</td>
+                            <th>Descrição</th>
 
-                <td>{{ evento.hora }}</td>
+                            <th>Data</th>
 
-                <td>
+                            <th>Hora</th>
 
-                    <!-- Botão Editar -->
+                            <th width="220">
 
-                    <a
-                        href="/admin/eventos/editar/{{ evento.id }}"
-                        class="btn btn-warning btn-sm"
-                    >
-                        Editar
-                    </a>
+                                Ações
 
-                    <!-- Botão Excluir -->
+                            </th>
 
-                    <a
-                        href="/admin/eventos/excluir/{{ evento.id }}"
-                        class="btn btn-danger btn-sm"
-                    >
-                        Excluir
-                    </a>
+                        </tr>
 
-                </td>
+                    </thead>
 
-            </tr>
+                    <tbody>
 
-            {% endfor %}
+                        {% for evento in eventos %}
 
-        </tbody>
+                        <tr>
 
-    </table>
+                            <!-- Título -->
+
+                            <td class="fw-bold">
+
+                                {{ evento.titulo }}
+
+                            </td>
+
+                            <!-- Descrição -->
+
+                            <td>
+
+                                {{ evento.descricao }}
+
+                            </td>
+
+                            <!-- Data -->
+
+                            <td>
+
+                                {{ evento.data }}
+
+                            </td>
+
+                            <!-- Hora -->
+
+                            <td>
+
+                                {{ evento.hora }}
+
+                            </td>
+
+                            <!-- Ações -->
+
+                            <td>
+
+                                <div class="d-flex flex-column flex-lg-row gap-2">
+
+                                    <!-- Editar -->
+
+                                    <a
+                                        href="/admin/eventos/editar/{{ evento.id }}"
+                                        class="btn btn-warning btn-sm"
+                                    >
+
+                                        <i class="bi bi-pencil-square"></i>
+
+                                        Editar
+
+                                    </a>
+
+                                    <!-- Excluir -->
+
+                                    <a
+                                        href="/admin/eventos/excluir/{{ evento.id }}"
+                                        class="btn btn-danger btn-sm"
+
+                                        onclick="return confirm('Deseja realmente excluir este evento?')"
+                                    >
+
+                                        <i class="bi bi-x-square"></i>
+
+                                        Excluir
+
+                                    </a>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
