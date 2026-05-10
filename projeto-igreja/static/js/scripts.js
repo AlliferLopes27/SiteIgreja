@@ -1,5 +1,4 @@
 // FUNÇÃO DO TOAST (BOOTSTRAP)
-
 function mostrarToast(mensagem, tipo = "success") {
 
     const toastEl = document.getElementById('liveToast');
@@ -19,57 +18,84 @@ function mostrarToast(mensagem, tipo = "success") {
 }
 
 // DETECTA PARÂMETROS DA URL (FLASK)
-
 window.onload = function () {
 
     const urlParams = new URLSearchParams(window.location.search);
 
+    let temMensagem = false;
+
     // EVENTOS
     if (urlParams.get('evento') === 'criado') {
         mostrarToast("Evento criado com sucesso!", "success");
+        temMensagem = true;
     }
 
     if (urlParams.get('evento') === 'editado') {
         mostrarToast("Evento atualizado com sucesso!", "success");
+        temMensagem = true;
     }
 
     if (urlParams.get('evento') === 'excluido') {
-        mostrarToast("Evento excluído com sucesso!", "success");
+        mostrarToast("Evento excluído com sucesso!", "danger");
+        temMensagem = true;
     }
 
     // PEDIDOS
     if (urlParams.get('enviado') === '1') {
-        mostrarToast("Pedido de oração enviado com sucesso!", "sucess");
+        mostrarToast("Pedido de oração enviado com sucesso!", "success");
+        temMensagem = true;
+    }
+
+    // LOGIN
+    if (urlParams.get('auth') === 'login_success') {
+        mostrarToast("Login realizado com sucesso!", "success");
+        temMensagem = true;
+    }
+
+    if (urlParams.get('auth') === 'login_error') {
+        mostrarToast("Email ou senha inválidos!", "danger");
+        temMensagem = true;
+    }
+
+    if (urlParams.get('auth') === 'logout_success') {
+        mostrarToast("Logout realizado com sucesso!", "info");
+        temMensagem = true;
+    }
+
+    // LIMPA URL PARA NÃO REPETIR AO RECARREGAR
+    if (temMensagem) {
+        window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname
+        );
     }
 };
 
-    // Seleciona botão
+// Seleciona botão
+const btnTopo = document.getElementById("btn-topo");
 
-    const btnTopo = document.getElementById("btn-topo");
+// Mostrar botão ao rolar
+window.onscroll = function () {
 
-    // Mostrar botão ao rolar
+    if (document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200) {
 
-    window.onscroll = function () {
+        btnTopo.style.display = "block";
 
-        if (document.body.scrollTop > 200 ||
-            document.documentElement.scrollTop > 200) {
+    } else {
 
-            btnTopo.style.display = "block";
+        btnTopo.style.display = "none";
+    }
+};
 
-        } else {
+// Voltar ao topo
+btnTopo.addEventListener("click", function () {
 
-            btnTopo.style.display = "none";
-        }
-    };
+    window.scrollTo({
 
-    // Voltar ao topo
+        top: 0,
 
-    btnTopo.addEventListener("click", function () {
-
-        window.scrollTo({
-
-            top: 0,
-
-            behavior: "smooth"
-        });
+        behavior: "smooth"
     });
+});
