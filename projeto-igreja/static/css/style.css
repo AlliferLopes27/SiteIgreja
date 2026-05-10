@@ -3,6 +3,7 @@
 html {
     height: 100%;
 }
+
 /* Body */
 
 body {
@@ -40,16 +41,27 @@ main {
 /* Logo navbar */
 
 .logo-navbar {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
 }
 
 /* Carousel */
 
-.carousel img {
-    height: 500px;
+.carousel-img {
+
+    height: 650px;
+
     object-fit: cover;
+
+    filter: brightness(0.7);
+}
+
+/* Texto do carousel */
+
+.carousel-caption {
+
+    bottom: 20%;
 }
 
 /* Cards */
@@ -120,4 +132,131 @@ h3 {
 
 .footer hr {
     border-color: #444;
+}
+
+/* Botão voltar ao topo */
+
+#btn-topo {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    right: 20px;
+
+    background-color: #111;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 50%;
+
+    width: 55px;
+
+    height: 55px;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 999;
+
+    transition: 0.3s;
+}
+
+/* Hover */
+
+#btn-topo:hover {
+
+    background-color: #333;
+
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+
+    /* Logo */
+
+    .logo-navbar {
+
+        width: 80px;
+
+        height: 80px;
+    }
+
+    /* Carousel */
+
+    .carousel-img {
+
+        height: 300px;
+    }
+
+    /* Texto carousel */
+
+    .carousel-caption {
+
+        bottom: 10%;
+    }
+
+    .carousel-caption h1 {
+
+        font-size: 24px;
+    }
+
+    .carousel-caption p {
+
+        font-size: 14px;
+    }
+
+    /* Títulos */
+
+    h1 {
+
+        font-size: 28px;
+    }
+
+    h2 {
+
+        font-size: 24px;
+    }
+
+    h3 {
+
+        font-size: 20px;
+    }
+
+    /* Rodapé */
+
+    .footer {
+
+        text-align: center;
+    }
+
+    /* Redes sociais */
+
+    .social-icons img {
+
+        width: 40px;
+
+        height: 40px;
+
+        margin: 5px;
+    }
+
+    /* Botão topo */
+
+    #btn-topo {
+
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 24px;
+    }
+
 }
