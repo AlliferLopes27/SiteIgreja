@@ -30,9 +30,17 @@ def login():
 
         usuario = Usuario.query.filter_by(email=email).first()
 
+        # LOGIN OK
         if usuario and check_password_hash(usuario.senha, senha):
+
             login_user(usuario)
-            return redirect('/admin/dashboard')
+
+            return redirect('/admin/dashboard?auth=login_success')
+
+        # LOGIN FALHOU
+        else:
+
+            return redirect('/admin/login?auth=login_error')
 
     return render_template('admin/login.html')
 
@@ -41,8 +49,10 @@ def login():
 @admin_bp.route('/logout')
 @login_required
 def logout():
+
     logout_user()
-    return redirect('/admin/login')
+
+    return redirect('/admin/login?auth=logout_success')
 
 
 # DASHBOARD (BASE)
