@@ -93,7 +93,7 @@ Gerenciamento de autenticação administrativa.
 ## 1️⃣ Clonar o Repositório
 
 ```bash
-https://github.com/AlliferLopes27/SiteIgreja.git
+https://github.com/AlliferLopes27/SiteIgreja
 ```
 
 ---
@@ -117,7 +117,7 @@ Acesse:
 http://localhost/phpmyadmin/
 ```
 
-Crie o banco:
+Crie o banco de dados:
 
 ```sql
 CREATE DATABASE igreja_db;
@@ -151,14 +151,42 @@ http://localhost:5000
 
 ---
 
-# 🔐 Login Administrativo
+# 🔐 Criando um Usuário Administrador
 
-Exemplo:
+Após configurar o banco de dados e executar o projeto, é necessário criar um usuário administrador para acessar o painel administrativo.
+
+Execute no terminal:
+
+```bash
+python criar_admin.py
+```
+
+Após executar o arquivo, o usuário administrador será salvo no banco de dados.
+
+---
+
+## 📌 Exemplo de Login
 
 ```text
 Email: admin@admin.com
 Senha: 12345@
 ```
+
+---
+
+## 🌐 Acesso Administrativo
+
+Acesse no navegador:
+
+```text
+http://localhost:5000/admin/login
+```
+
+---
+
+## 🔒 Segurança
+
+As senhas são armazenadas utilizando hash de segurança através do Werkzeug.
 
 ---
 
@@ -187,6 +215,7 @@ projeto-igreja/
 │   │   └── style.css
 │   │
 │   ├── img/
+│   │   └── imagens.png
 │   │
 │   └── js/
 │       └── scripts.js
